@@ -1,0 +1,556 @@
+==4372== Memcheck, a memory error detector
+==4372== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==4372== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==4372== Command: ./a.out
+==4372== 
+insert: 19
+insert: 1
+insert: 15
+check sort
+remove: 1
+node: 0x5a05d20
+1 15 19 
+children: 
+
+node: 0x5a05d20
+1 15 19 
+children: 
+
+root is leaf
+index: 0
+node: 0x5a05d20
+15 19 
+children: 
+
+remove: 15
+node: 0x5a05d20
+15 19 
+children: 
+
+node: 0x5a05d20
+15 19 
+children: 
+
+root is leaf
+index: 0
+node: 0x5a05d20
+19 
+children: 
+
+insert: 14
+check sort
+insert: 54
+insert: 24
+remove: 19
+node: 0x5a05d20
+14 19 24 54 
+children: 
+
+node: 0x5a05d20
+14 19 24 54 
+children: 
+
+root is leaf
+index: 1
+node: 0x5a05d20
+14 24 54 
+children: 
+
+insert: 48
+insert: 33
+insert: 30
+check sort
+insert: 23
+insert: 6
+check sort
+insert: 28
+check sort
+remove: 24
+node: 0x5a070b0
+23 33 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 
+children: 
+
+node: 0x5a07ba0
+24 28 30 
+children: 
+
+node: 0x5a06db0
+48 54 
+children: 
+
+node is leaf
+insert: 31
+insert: 22
+insert: 27
+check sort
+insert: 40
+check sort
+insert: 44
+remove: 28
+node: 0x5a070b0
+23 33 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 22 
+children: 
+
+node: 0x5a07ba0
+27 28 30 31 
+children: 
+
+node: 0x5a06db0
+40 44 48 54 
+children: 
+
+node is leaf
+remove: 23
+node: 0x5a070b0
+23 33 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 22 
+children: 
+
+node: 0x5a07ba0
+27 30 31 
+children: 
+
+node: 0x5a06db0
+40 44 48 54 
+children: 
+
+node is not leaf
+closestLeaf: 0x5a05d20
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40C520: BTree::deleteKeyFromNode(IBTreeNode*, int) (BTree.cpp:242)
+==4372==    by 0x40DA71: BTree::remove(IBTreeNode*, int) (BTree.cpp:503)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+remove: 30
+node: 0x5a070b0
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x4EBAD23: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x40D42B: BTree::printTree(IBTreeNode*) (BTree.cpp:419)
+==4372==    by 0x40D60A: BTree::remove(IBTreeNode*, int) (BTree.cpp:445)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Use of uninitialised value of size 8
+==4372==    at 0x4EBA823: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBAD47: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x40D42B: BTree::printTree(IBTreeNode*) (BTree.cpp:419)
+==4372==    by 0x40D60A: BTree::remove(IBTreeNode*, int) (BTree.cpp:445)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x4EBA82E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBAD47: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x40D42B: BTree::printTree(IBTreeNode*) (BTree.cpp:419)
+==4372==    by 0x40D60A: BTree::remove(IBTreeNode*, int) (BTree.cpp:445)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x4EBAD77: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x40D42B: BTree::printTree(IBTreeNode*) (BTree.cpp:419)
+==4372==    by 0x40D60A: BTree::remove(IBTreeNode*, int) (BTree.cpp:445)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+0 33 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 
+children: 
+
+node: 0x5a07ba0
+27 30 31 
+children: 
+
+node: 0x5a06db0
+40 44 48 54 
+children: 
+
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40C278: BTree::search(IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >&, int) (BTree.cpp:192)
+==4372==    by 0x40D83A: BTree::remove(IBTreeNode*, int) (BTree.cpp:476)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40C2B7: BTree::search(IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >&, int) (BTree.cpp:194)
+==4372==    by 0x40D83A: BTree::remove(IBTreeNode*, int) (BTree.cpp:476)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+node is leaf
+insert: 10
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40C0A3: BTree::insert(IBTreeNode*, int, int) (BTree.cpp:163)
+==4372==    by 0x40E237: BTree::insert(int, int) (BTree.cpp:606)
+==4372==    by 0x419EFF: Grader04::testBTree(std::string) (Grader04.cpp:393)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+remove: 33
+node: 0x5a070b0
+0 33 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 
+children: 
+
+node: 0x5a07ba0
+10 27 31 
+children: 
+
+node: 0x5a06db0
+40 44 48 54 
+children: 
+
+node is not leaf
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40D59C: BTree::findKeyIndex(IBTreeNode*, int) (BTree.cpp:436)
+==4372==    by 0x40D8C7: BTree::remove(IBTreeNode*, int) (BTree.cpp:485)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40D9C9: BTree::remove(IBTreeNode*, int) (BTree.cpp:496)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+closestLeaf: 0x5a07ba0
+remove: 44
+node: 0x5a070b0
+0 31 
+children: 
+0x5a05d20 0x5a07ba0 0x5a06db0 
+node: 0x5a05d20
+6 14 
+children: 
+
+node: 0x5a07ba0
+10 27 
+children: 
+
+node: 0x5a06db0
+40 44 48 54 
+children: 
+
+node is leaf
+insert: 4
+insert: 32
+insert: 53
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40B6AA: doInsertInner(IBTreeNode*, int, IBTreeNode*) (BTree.cpp:50)
+==4372==    by 0x40B889: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:72)
+==4372==    by 0x40BF43: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:138)
+==4372==    by 0x40C18C: BTree::insert(IBTreeNode*, int, int) (BTree.cpp:176)
+==4372==    by 0x40E237: BTree::insert(int, int) (BTree.cpp:606)
+==4372==    by 0x419EFF: Grader04::testBTree(std::string) (Grader04.cpp:393)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+insert: 52
+insert: 0
+insert: 26
+remove: 27
+node: 0x5a070b0
+0 10 31 48 
+children: 
+0x5a05d20 0x5a07ba0 0x5a0ada0 0x5a06db0 0x5a0a690 
+node: 0x5a05d20
+6 14 
+children: 
+
+node: 0x5a07ba0
+0 4 
+children: 
+
+node: 0x5a0ada0
+26 27 
+children: 
+
+node: 0x5a06db0
+32 40 
+children: 
+
+node: 0x5a0a690
+52 53 54 
+children: 
+
+node is leaf
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40C610: BTree::findParent(IBTreeNode*, IBTreeNode*) (BTree.cpp:256)
+==4372==    by 0x40DB07: BTree::remove(IBTreeNode*, int) (BTree.cpp:514)
+==4372==    by 0x40E27D: BTree::remove(int, int) (BTree.cpp:611)
+==4372==    by 0x419FAD: Grader04::testBTree(std::string) (Grader04.cpp:397)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+todo
+insert: 35
+insert: 47
+insert: 9
+insert: 49
+insert: 20
+insert: 36
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x40FA92: void std::__insertion_sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:2107)
+==4372==    by 0x40EF08: void std::__final_insertion_sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:2185)
+==4372==    by 0x40E5AA: void std::sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:5409)
+==4372==    by 0x40B97E: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:81)
+==4372==    by 0x40BF43: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:138)
+==4372==    by 0x40C18C: BTree::insert(IBTreeNode*, int, int) (BTree.cpp:176)
+==4372==    by 0x40E237: BTree::insert(int, int) (BTree.cpp:606)
+==4372==    by 0x419EFF: Grader04::testBTree(std::string) (Grader04.cpp:393)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x410601: void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:2068)
+==4372==    by 0x40FAF8: void std::__insertion_sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:2115)
+==4372==    by 0x40EF08: void std::__final_insertion_sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:2185)
+==4372==    by 0x40E5AA: void std::sort<__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > > >(__gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >, __gnu_cxx::__normal_iterator<KeyIndexPair*, std::vector<KeyIndexPair, std::allocator<KeyIndexPair> > >) (stl_algo.h:5409)
+==4372==    by 0x40B97E: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:81)
+==4372==    by 0x40BF43: breakThingsUp(IBTreeNode*, IBTreeNode*, IBTreeNode*, std::vector<IBTreeNode*, std::allocator<IBTreeNode*> >, int, int) (BTree.cpp:138)
+==4372==    by 0x40C18C: BTree::insert(IBTreeNode*, int, int) (BTree.cpp:176)
+==4372==    by 0x40E237: BTree::insert(int, int) (BTree.cpp:606)
+==4372==    by 0x419EFF: Grader04::testBTree(std::string) (Grader04.cpp:393)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+check sort
+vec: 
+  0
+  4
+  6
+  9
+  10
+  14
+  20
+  22
+  26
+  31
+  32
+  35
+  36
+  40
+  47
+  48
+  49
+  52
+  53
+  54
+vec: 
+  6
+  14
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x4EBAD23: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x416E24: printVector(std::vector<int, std::allocator<int> >&) (Grader04.cpp:52)
+==4372==    by 0x41A3EC: Grader04::testBTree(std::string) (Grader04.cpp:423)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+==4372== Conditional jump or move depends on uninitialised value(s)
+==4372==    at 0x4EBAD77: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EBB065: std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x4EC64DC: std::ostream& std::ostream::_M_insert<long>(long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.16)
+==4372==    by 0x416E24: printVector(std::vector<int, std::allocator<int> >&) (Grader04.cpp:52)
+==4372==    by 0x41A3EC: Grader04::testBTree(std::string) (Grader04.cpp:423)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372==  Uninitialised value was created by a heap allocation
+==4372==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4372==    by 0x416A2B: Factory04::create(std::string) (Factory04.cpp:24)
+==4372==    by 0x4036D5: AbstractGrader::createObject(std::string) (AbstractGrader.cpp:306)
+==4372==    by 0x419DE2: Grader04::testBTree(std::string) (Grader04.cpp:384)
+==4372==    by 0x41C16B: Grader04::grade(int) (Grader04.cpp:562)
+==4372==    by 0x41FB8F: main (main.cpp:13)
+==4372== 
+  0
+  0
+  4
+  9
+  10
+  20
+  26
+  31
+  32
+  35
+  36
+  40
+  47
+  48
+  49
+  52
+  53
+  54
+Test Case: 20
+Passed: false
+Points: 0
+Description: B-Tree Small Insert/Delete Random
+Error Message: error in inorder traversal. cmd_index: 47
+Elapsed Time (ms): 0
+
+SOME TESTS FAIL.
+raw score: 0
+==4372== 
+==4372== HEAP SUMMARY:
+==4372==     in use at exit: 1,618 bytes in 33 blocks
+==4372==   total heap usage: 327 allocs, 294 frees, 18,354 bytes allocated
+==4372== 
+==4372== LEAK SUMMARY:
+==4372==    definitely lost: 96 bytes in 4 blocks
+==4372==    indirectly lost: 1,522 bytes in 29 blocks
+==4372==      possibly lost: 0 bytes in 0 blocks
+==4372==    still reachable: 0 bytes in 0 blocks
+==4372==         suppressed: 0 bytes in 0 blocks
+==4372== Rerun with --leak-check=full to see details of leaked memory
+==4372== 
+==4372== For counts of detected and suppressed errors, rerun with: -v
+==4372== ERROR SUMMARY: 54 errors from 16 contexts (suppressed: 2 from 2)

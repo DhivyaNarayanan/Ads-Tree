@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0B5156E5-D082-4B94-9B42-854A9B82B550}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AbstractGrader.cpp" />
+    <ClCompile Include="AVLTree.cpp" />
+    <ClCompile Include="AVLTreeNode.cpp" />
+    <ClCompile Include="BTree.cpp" />
+    <ClCompile Include="BTreeNode.cpp" />
+    <ClCompile Include="Commands04.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Factory04.cpp" />
+    <ClCompile Include="Grader04.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectFactory.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="RTree.cpp" />
+    <ClCompile Include="Stopwatch.cpp" />
+    <ClCompile Include="UnixStopwatch.cpp" />
+    <ClCompile Include="WindowsStopwatch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstractGrader.h" />
+    <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="AVLTreeNode.h" />
+    <ClInclude Include="BTree.h" />
+    <ClInclude Include="BTreeNode.h" />
+    <ClInclude Include="Commands04.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Factory04.h" />
+    <ClInclude Include="Grader04.h" />
+    <ClInclude Include="Interfaces02.h" />
+    <ClInclude Include="Interfaces04.h" />
+    <ClInclude Include="ObjectFactory.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Random.h" />
+    <ClInclude Include="RTree.h" />
+    <ClInclude Include="Stopwatch.h" />
+    <ClInclude Include="TestCase.h" />
+    <ClInclude Include="UnixStopwatch.h" />
+    <ClInclude Include="vector.h" />
+    <ClInclude Include="WindowsStopwatch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="avl_cmds_1.bin" />
+    <None Include="avl_cmds_10.bin" />
+    <None Include="avl_cmds_2.bin" />
+    <None Include="avl_cmds_3.bin" />
+    <None Include="avl_cmds_4.bin" />
+    <None Include="avl_cmds_5.bin" />
+    <None Include="avl_cmds_6.bin" />
+    <None Include="avl_cmds_7.bin" />
+    <None Include="avl_cmds_8.bin" />
+    <None Include="avl_cmds_9.bin" />
+    <None Include="btree_cmds_1.bin" />
+    <None Include="btree_cmds_10.bin" />
+    <None Include="btree_cmds_2.bin" />
+    <None Include="btree_cmds_3.bin" />
+    <None Include="btree_cmds_4.bin" />
+    <None Include="btree_cmds_5.bin" />
+    <None Include="btree_cmds_6.bin" />
+    <None Include="btree_cmds_7.bin" />
+    <None Include="btree_cmds_8.bin" />
+    <None Include="btree_cmds_9.bin" />
+    <None Include="rtree_cmds_1.bin" />
+    <None Include="rtree_cmds_2.bin" />
+    <None Include="rtree_cmds_3.bin" />
+    <None Include="rtree_cmds_4.bin" />
+    <None Include="rtree_points_1.bin" />
+    <None Include="rtree_points_2.bin" />
+    <None Include="rtree_points_3.bin" />
+    <None Include="rtree_points_4.bin" />
+    <None Include="rtree_sorted_points_1.bin" />
+    <None Include="rtree_sorted_points_2.bin" />
+    <None Include="rtree_sorted_points_2a.bin" />
+    <None Include="rtree_sorted_points_3.bin" />
+    <None Include="rtree_sorted_points_4.bin" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
